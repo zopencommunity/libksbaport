@@ -1,0 +1,13 @@
+diff --git a/src/Makefile.in b/src/Makefile.in
+index a83912c..13876c5 100644
+--- a/src/Makefile.in
++++ b/src/Makefile.in
+@@ -1250,7 +1250,7 @@ asn1-gentables$(EXEEXT_FOR_BUILD): asn1-gentables.c asn1-parse.c asn1-func.c \
+ 		$(srcdir)/asn1-gentables.c \
+                 `test -f 'asn1-parse.c' || echo '$(srcdir)/'`asn1-parse.c  \
+                 $(srcdir)/asn1-func.c      \
+-                $(srcdir)/gen-help.c
++                $(srcdir)/gen-help.c $(LIBS)
+ 
+ asn1-tables.c : $(asn1_modules) asn1-gentables$(EXEEXT_FOR_BUILD)
+ 	@set -e; list=""; \
