@@ -1,6 +1,9 @@
-export ZOPEN_TARBALL_URL="https://gnupg.org/ftp/gcrypt/libksba/libksba-1.6.3.tar.bz2"
-export ZOPEN_TARBALL_DEPS="make bzip2 tar curl perl automake autoconf m4 sed gettext zoslib diffutils libgpgerror"
-export ZOPEN_TYPE="TARBALL"
+# bump: libksba-version /LIBKSBA_VERSION="(.*)"/ https://gnupg.org/ftp/gcrypt/libksba/|re:/libksba-([\d.]+).tar.bz2/$1/|semver:*
+LIBKSBA_VERSION="1.6.3"
+
+export ZOPEN_STABLE_URL="https://gnupg.org/ftp/gcrypt/libksba/libksba-${LIBKSBA_VERSION}.tar.bz2"
+export ZOPEN_STABLE_DEPS="make bzip2 tar curl perl automake autoconf m4 sed gettext zoslib diffutils libgpgerror"
+export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_COMP=CLANG
 export CFLAGS_FOR_BUILD=$CFLAGS
 zopen_check_results()
@@ -35,5 +38,5 @@ zopen_get_version()
 {
   # Modify to echo the version of your tool/library
   # Rather than hardcoding the version, obtain the version by running the tool/library
-  echo "1.0.0"
+  echo "${LIBKSBA_VERSION}"
 }
