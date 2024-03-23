@@ -1,5 +1,5 @@
 # bump: libksba-version /LIBKSBA_VERSION="(.*)"/ https://gnupg.org/ftp/gcrypt/libksba/|re:/libksba-([\d.]+).tar.bz2/$1/|semver:*
-LIBKSBA_VERSION="1.6.5"
+LIBKSBA_VERSION="1.6.6"
 
 export ZOPEN_STABLE_URL="https://gnupg.org/ftp/gcrypt/libksba/libksba-${LIBKSBA_VERSION}.tar.bz2"
 export ZOPEN_STABLE_DEPS="make bzip2 tar curl perl automake autoconf m4 sed gettext zoslib diffutils libgpgerror"
