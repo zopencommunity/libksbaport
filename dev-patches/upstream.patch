@@ -1,0 +1,28 @@
+diff --git a/m4/libtool.m4 b/m4/libtool.m4
+index c6f534e..3061194 100644
+--- a/m4/libtool.m4
++++ b/m4/libtool.m4
+@@ -3348,6 +3348,10 @@ openbsd*)
+   fi
+   ;;
+ 
++openedition)
++  lt_cv_deplibs_check_method=pass_all
++  ;;
++
+ osf3* | osf4* | osf5*)
+   lt_cv_deplibs_check_method=pass_all
+   ;;
+diff --git a/src/Makefile.am b/src/Makefile.am
+index 14eb889..b0bd82e 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -132,7 +132,7 @@ asn1-gentables$(EXEEXT_FOR_BUILD): asn1-gentables.c asn1-parse.c asn1-func.c \
+ 		$(srcdir)/asn1-gentables.c \
+                 `test -f 'asn1-parse.c' || echo '$(srcdir)/'`asn1-parse.c  \
+                 $(srcdir)/asn1-func.c      \
+-                $(srcdir)/gen-help.c
++                $(srcdir)/gen-help.c $(LIBS)
+ 
+ asn1-tables.c : $(asn1_modules) asn1-gentables$(EXEEXT_FOR_BUILD)
+ 	@set -e; list=""; \
