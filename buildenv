@@ -8,6 +8,8 @@ export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_COMP=CLANG
 export CFLAGS_FOR_BUILD=$CFLAGS
 export ZOPEN_EXTRA_CFLAGS="${ZOPEN_EXTRA_CFLAGS} -mzos-target=zosv2r5 -march=z13"
+export ZOPEN_SYSTEM_PREREQS="zos25"
+
 zopen_check_results()
 {
   dir="$1"
